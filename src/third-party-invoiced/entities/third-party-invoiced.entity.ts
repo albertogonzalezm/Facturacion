@@ -15,6 +15,9 @@ export class ThirdPartyInvoiced {
   @Column()
   phone: string;
 
-  @OneToMany(() => Invoice, (invoice) => invoice.thirdPartyInvoicedId)
+  @OneToMany(() => Invoice, (invoice) => invoice.thirdPartyInvoicedId, {
+    onDelete: 'CASCADE',
+    cascade: true,
+  })
   invoices: Invoice[];
 }

@@ -5,6 +5,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsString,
+  Min,
 } from 'class-validator';
 
 export class CreateInvoiceDto {
@@ -18,13 +19,15 @@ export class CreateInvoiceDto {
   @IsNotEmpty()
   date_of_issue: Date;
 
-  @ApiProperty({ type: Number, format: 'decimal' })
+  @ApiProperty({ type: Number, format: 'decimal', minimum: 0 })
   @IsNumber()
+  @Min(0)
   @IsNotEmpty()
   total: number;
 
-  @ApiProperty({ type: Number, format: 'int' })
+  @ApiProperty({ type: Number, format: 'int', minimum: 1 })
   @IsInt()
+  @Min(1)
   @IsNotEmpty()
   third_party_invoiced_id: number;
 }

@@ -27,13 +27,20 @@ export class Invoice {
   @ManyToOne(
     () => ThirdPartyInvoiced,
     (thirdPartyInvoiced) => thirdPartyInvoiced.invoices,
+    { onDelete: 'CASCADE' },
   )
   @JoinColumn({ name: 'third_party_invoiced_id' })
   thirdPartyInvoicedId: ThirdPartyInvoiced;
 
-  @OneToMany(() => Concept, (concept) => concept.invoiceId)
+  @OneToMany(() => Concept, (concept) => concept.invoiceId, {
+    onDelete: 'CASCADE',
+    cascade: true,
+  })
   concepts: Concept[];
 
-  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.invoiceId)
+  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.invoiceId, {
+    onDelete: 'CASCADE',
+    cascade: true,
+  })
   invoiceDetails: InvoiceDetail[];
 }

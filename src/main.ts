@@ -13,7 +13,7 @@ async function bootstrap() {
       'Desarrollador Junior en NestJS - Prueba de Habilidades (Facturación)',
     )
     .setDescription(
-      'Desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta, actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura.',
+      'Has sido asignado a un proyecto para desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta, actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura. Debes utilizar TypeORM para interactuar con una base de datos MySQL local.',
     )
     .setVersion('1.0')
     .addTag('Tercero Facturado')

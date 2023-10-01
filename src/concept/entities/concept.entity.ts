@@ -23,10 +23,15 @@ export class Concept {
   @Column({ type: 'int' })
   quantity: number;
 
-  @ManyToOne(() => Invoice, (invoice) => invoice.concepts)
+  @ManyToOne(() => Invoice, (invoice) => invoice.concepts, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'invoice_id' })
   invoiceId: Invoice;
 
-  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.conceptId)
+  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.conceptId, {
+    onDelete: 'CASCADE',
+    cascade: true,
+  })
   invoiceDetails: InvoiceDetail[];
 }

@@ -1,8 +1,8 @@
 {
   "name": "facturacion",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Desarrollador Junior en NestJS - Prueba de Habilidades (Facturación)",
+  "author": "Gonza",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

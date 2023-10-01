@@ -16,11 +16,15 @@ export class InvoiceDetail {
   @Column({ type: 'int' })
   quantity: number;
 
-  @ManyToOne(() => Invoice, (invoice) => invoice.invoiceDetails)
+  @ManyToOne(() => Invoice, (invoice) => invoice.invoiceDetails, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'invoice_id' })
   invoiceId: Invoice;
 
-  @ManyToOne(() => Concept, (concept) => concept.invoiceDetails)
+  @ManyToOne(() => Concept, (concept) => concept.invoiceDetails, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'concept_id' })
   conceptId: Concept;
 }
