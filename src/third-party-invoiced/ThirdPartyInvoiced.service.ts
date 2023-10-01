@@ -11,7 +11,7 @@ export class ThirdPartyInvoicedService {
     private thirdPartyInvoicedRepository: Repository<ThirdPartyInvoiced>,
   ) {}
 
-  async create(data: CreateThirdPartyInvoicedDto) {
+  async create(data: CreateThirdPartyInvoicedDto): Promise<ThirdPartyInvoiced> {
     return await this.thirdPartyInvoicedRepository.save(data);
   }
 
@@ -26,6 +26,19 @@ export class ThirdPartyInvoicedService {
     const thirdPartyInvoicedFound =
       await this.thirdPartyInvoicedRepository.findOne({
         where: { id },
+      });
+    if (!thirdPartyInvoicedFound)
+      throw new NotFoundException(
+        'No se encontró el Tercero Facturado solicitado',
+      );
+    return thirdPartyInvoicedFound;
+  }
+
+  async findOneAndGetInvoices(id: number): Promise<ThirdPartyInvoiced> {
+    const thirdPartyInvoicedFound =
+      await this.thirdPartyInvoicedRepository.findOne({
+        where: { id },
+        relations: { invoices: true },
       });
     if (!thirdPartyInvoicedFound)
       throw new NotFoundException(

@@ -22,21 +22,18 @@ export class Invoice {
   date_of_issue: Date;
 
   @Column({ type: 'decimal', precision: 8, scale: 2 })
-  total: string;
-
-  @Column({ type: 'int' })
-  third_party_invoiced_id: number;
+  total: number;
 
   @ManyToOne(
     () => ThirdPartyInvoiced,
     (thirdPartyInvoiced) => thirdPartyInvoiced.invoices,
   )
   @JoinColumn({ name: 'third_party_invoiced_id' })
-  thirdParrtInvoiced: ThirdPartyInvoiced;
+  thirdPartyInvoicedId: ThirdPartyInvoiced;
 
-  @OneToMany(() => Concept, (concept) => concept.invoice_id)
+  @OneToMany(() => Concept, (concept) => concept.invoiceId)
   concepts: Concept[];
 
-  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.invoice_id)
+  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.invoiceId)
   invoiceDetails: InvoiceDetail[];
 }

@@ -14,7 +14,7 @@ export class InvoiceService {
     private invoiceRepository: Repository<Invoice>,
   ) {}
 
-  async create(data: CreateInvoiceDto) {
+  async create(data: CreateInvoiceDto): Promise<Invoice> {
     const thirdPartyInvoicedFound =
       await this.thirdPartyInvoicedRepository.findOne({
         where: { id: data.third_party_invoiced_id },
@@ -29,19 +29,29 @@ export class InvoiceService {
   }
 
   async findAll(): Promise<Invoice[]> {
-    const found = await this.invoiceRepository.find();
-    if (!found.length)
+    const invoicesFound = await this.invoiceRepository.find();
+    if (!invoicesFound.length)
       throw new NotFoundException('No se encontró ninguna Factura');
-    return found;
+    return invoicesFound;
   }
 
   async findOne(id: number): Promise<Invoice> {
-    const thirdPartyInvoicedFound = await this.invoiceRepository.findOne({
+    const invoiceFound = await this.invoiceRepository.findOne({
       where: { id },
     });
-    if (!thirdPartyInvoicedFound)
+    if (!invoiceFound)
       throw new NotFoundException('No se encontró la Factura solicitada');
-    return thirdPartyInvoicedFound;
+    return invoiceFound;
+  }
+
+  async findOneAndGetConcepts(id: number): Promise<Invoice> {
+    const invoiceFound = await this.invoiceRepository.findOne({
+      where: { id },
+      relations: { concepts: true },
+    });
+    if (!invoiceFound)
+      throw new NotFoundException('No se encontró la Factura solicitada');
+    return invoiceFound;
   }
 
   async update(id: number, data: UpdateInvoiceDto): Promise<string> {
@@ -57,7 +67,7 @@ export class InvoiceService {
     const del = await this.invoiceRepository.delete(id);
     if (!del.affected)
       throw new NotFoundException(
-        'No se pudo encontrar el recurso o fue eliminado con anterioridad',
+        'No se pudo encontrar la Factura o fue eliminado con anterioridad',
       );
   }
 }

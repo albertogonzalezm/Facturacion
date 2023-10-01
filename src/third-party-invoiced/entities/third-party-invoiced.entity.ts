@@ -15,6 +15,6 @@ export class ThirdPartyInvoiced {
   @Column()
   phone: string;
 
-  @OneToMany(() => Invoice, (invoice) => invoice.third_party_invoiced_id)
+  @OneToMany(() => Invoice, (invoice) => invoice.thirdPartyInvoicedId)
   invoices: Invoice[];
 }

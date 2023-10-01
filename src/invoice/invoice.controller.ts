@@ -38,6 +38,12 @@ export class InvoiceController {
     isNotANumber(id);
     return this.invoiceService.findOne(+id);
   }
+  @Get(':id/concepts')
+  @HttpCode(HttpStatus.OK)
+  findOneAndGetConcepts(@Param('id') id: string) {
+    isNotANumber(id);
+    return this.invoiceService.findOneAndGetConcepts(+id);
+  }
 
   @Patch(':id')
   @HttpCode(HttpStatus.OK)

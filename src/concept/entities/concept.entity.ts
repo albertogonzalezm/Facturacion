@@ -23,13 +23,10 @@ export class Concept {
   @Column({ type: 'int' })
   quantity: number;
 
-  @Column({ type: 'int' })
-  invoice_id: number;
-
   @ManyToOne(() => Invoice, (invoice) => invoice.concepts)
   @JoinColumn({ name: 'invoice_id' })
-  invoice: Invoice;
+  invoiceId: Invoice;
 
-  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.concept_id)
+  @OneToMany(() => InvoiceDetail, (invoiceDetail) => invoiceDetail.conceptId)
   invoiceDetails: InvoiceDetail[];
 }

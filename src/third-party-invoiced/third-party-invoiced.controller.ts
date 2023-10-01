@@ -8,7 +8,6 @@ import {
   Delete,
   HttpCode,
   HttpStatus,
-  BadRequestException,
 } from '@nestjs/common';
 import { ThirdPartyInvoicedService } from './ThirdPartyInvoiced.service';
 import { CreateThirdPartyInvoicedDto } from './dto/create-third-party-invoiced.dto';
@@ -40,6 +39,13 @@ export class ThirdPartyInvoicedController {
   findOne(@Param('id') id: string) {
     isNotANumber(id);
     return this.thirdPartyInvoicedService.findOne(+id);
+  }
+
+  @Get(':id/invoices')
+  @HttpCode(HttpStatus.OK)
+  findOneAndGetInvoices(@Param('id') id: string) {
+    isNotANumber(id);
+    return this.thirdPartyInvoicedService.findOneAndGetInvoices(+id);
   }
 
   @Patch(':id')

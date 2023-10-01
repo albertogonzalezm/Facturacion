@@ -1,4 +1,32 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateInvoiceDto } from './create-invoice.dto';
+import { ApiProperty } from '@nestjs/swagger';
+import {
+  IsDateString,
+  IsInt,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
-export class UpdateInvoiceDto extends PartialType(CreateInvoiceDto) {}
+export class UpdateInvoiceDto extends PartialType(CreateInvoiceDto) {
+  @ApiProperty({ type: String, required: false })
+  @IsString()
+  @IsOptional()
+  number: string;
+
+  @ApiProperty({ type: String, format: 'date', required: false })
+  @IsDateString()
+  @IsOptional()
+  date_of_issue: Date;
+
+  @ApiProperty({ type: Number, format: 'decimal', required: false })
+  @IsNumber()
+  @IsOptional()
+  total: number;
+
+  @ApiProperty({ type: Number, format: 'int', required: false })
+  @IsInt()
+  @IsOptional()
+  third_party_invoiced_id: number;
+}

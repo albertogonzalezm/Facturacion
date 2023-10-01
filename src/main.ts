@@ -9,15 +9,17 @@ async function bootstrap() {
     exclude: [{ path: '/', method: RequestMethod.ALL }],
   });
   const config = new DocumentBuilder()
-    .setTitle('Facturación')
+    .setTitle(
+      'Desarrollador Junior en NestJS - Prueba de Habilidades (Facturación)',
+    )
     .setDescription(
-      'Desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta,actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura.',
+      'Desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta, actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura.',
     )
     .setVersion('1.0')
     .addTag('Tercero Facturado')
     .addTag('Factura')
     .addTag('Concepto')
-    .addTag('Detalles de factura')
+    .addTag('Detalles De Factura')
     .addTag('Factura')
     .addServer('http://localhost:3000')
     .build();
