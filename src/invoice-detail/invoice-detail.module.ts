@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { InvoiceDetailService } from './invoice-detail.service';
 import { InvoiceDetailController } from './invoice-detail.controller';
-import { DatabaseModule } from 'src/database/database.module';
+import { DatabaseModule } from '../database/database.module';
 import { invoiceDetailProvider } from './invoice-detail.provider';
-import { invoiceProvider } from 'src/invoice/invoice.provider';
-import { conceptProvider } from 'src/concept/concept.provider';
+import { invoiceProvider } from '../invoice/invoice.provider';
+import { conceptProvider } from '../concept/concept.provider';
 
 @Module({
   imports: [DatabaseModule],

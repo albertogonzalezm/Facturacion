@@ -2,8 +2,8 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateInvoiceDetailDto } from './dto/create-invoice-detail.dto';
 import { UpdateInvoiceDetailDto } from './dto/update-invoice-detail.dto';
 import { Repository } from 'typeorm';
-import { Invoice } from 'src/invoice/entities/invoice.entity';
-import { Concept } from 'src/concept/entities/concept.entity';
+import { Invoice } from '../invoice/entities/invoice.entity';
+import { Concept } from '../concept/entities/concept.entity';
 import { InvoiceDetail } from './entities/invoice-detail.entity';
 
 @Injectable()

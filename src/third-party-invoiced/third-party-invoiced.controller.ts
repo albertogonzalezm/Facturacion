@@ -20,7 +20,7 @@ import {
   ApiOkResponse,
   ApiTags,
 } from '@nestjs/swagger';
-import { isNotANumber } from 'src/utils/is-not-a-number';
+import { isNotANumber } from '../utils/is-not-a-number';
 
 @ApiTags('Tercero Facturado')
 @Controller('third_party_invoiced')

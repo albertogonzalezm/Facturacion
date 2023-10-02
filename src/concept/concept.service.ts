@@ -2,7 +2,7 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateConceptDto } from './dto/create-concept.dto';
 import { UpdateConceptDto } from './dto/update-concept.dto';
 import { Concept } from './entities/concept.entity';
-import { Invoice } from 'src/invoice/entities/invoice.entity';
+import { Invoice } from '../invoice/entities/invoice.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()

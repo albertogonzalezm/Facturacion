@@ -23,6 +23,9 @@ export class Concept {
   @Column({ type: 'int' })
   quantity: number;
 
+  @Column({ type: 'int' })
+  invoice_id: number;
+
   @ManyToOne(() => Invoice, (invoice) => invoice.concepts, {
     onDelete: 'CASCADE',
   })

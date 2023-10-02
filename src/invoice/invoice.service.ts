@@ -1,7 +1,7 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateInvoiceDto } from './dto/create-invoice.dto';
 import { UpdateInvoiceDto } from './dto/update-invoice.dto';
-import { ThirdPartyInvoiced } from 'src/third-party-invoiced/entities/third-party-invoiced.entity';
+import { ThirdPartyInvoiced } from '../third-party-invoiced/entities/third-party-invoiced.entity';
 import { Repository } from 'typeorm';
 import { Invoice } from './entities/invoice.entity';
 

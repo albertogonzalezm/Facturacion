@@ -24,6 +24,9 @@ export class Invoice {
   @Column({ type: 'decimal', precision: 8, scale: 2 })
   total: number;
 
+  @Column({ type: 'int' })
+  third_party_invoiced_id: number;
+
   @ManyToOne(
     () => ThirdPartyInvoiced,
     (thirdPartyInvoiced) => thirdPartyInvoiced.invoices,

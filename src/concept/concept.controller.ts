@@ -12,7 +12,7 @@ import {
 import { ConceptService } from './concept.service';
 import { CreateConceptDto } from './dto/create-concept.dto';
 import { UpdateConceptDto } from './dto/update-concept.dto';
-import { isNotANumber } from 'src/utils/is-not-a-number';
+import { isNotANumber } from '../utils/is-not-a-number';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,

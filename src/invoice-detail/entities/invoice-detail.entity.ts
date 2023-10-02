@@ -14,6 +14,12 @@ export class InvoiceDetail {
   id: number;
 
   @Column({ type: 'int' })
+  invoice_id: number;
+
+  @Column({ type: 'int' })
+  concept_id: number;
+
+  @Column({ type: 'int' })
   quantity: number;
 
   @ManyToOne(() => Invoice, (invoice) => invoice.invoiceDetails, {

@@ -12,7 +12,7 @@ import {
 import { InvoiceService } from './invoice.service';
 import { CreateInvoiceDto } from './dto/create-invoice.dto';
 import { UpdateInvoiceDto } from './dto/update-invoice.dto';
-import { isNotANumber } from 'src/utils/is-not-a-number';
+import { isNotANumber } from '../utils/is-not-a-number';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
