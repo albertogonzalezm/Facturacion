@@ -1,6 +1,6 @@
-import { Concept } from 'src/concept/entities/concept.entity';
-import { InvoiceDetail } from 'src/invoice-detail/entities/invoice-detail.entity';
-import { ThirdPartyInvoiced } from 'src/third-party-invoiced/entities/third-party-invoiced.entity';
+import { Concept } from '../../concept/entities/concept.entity';
+import { InvoiceDetail } from '../../invoice-detail/entities/invoice-detail.entity';
+import { ThirdPartyInvoiced } from '../../third-party-invoiced/entities/third-party-invoiced.entity';
 import {
   Entity,
   Column,
@@ -45,5 +45,5 @@ export class Invoice {
     onDelete: 'CASCADE',
     cascade: true,
   })
-  invoiceDetails: InvoiceDetail[];
+  invoice_details: InvoiceDetail[];
 }

@@ -13,23 +13,23 @@ export class UpdateConceptDto extends PartialType(CreateConceptDto) {
   @ApiProperty({ type: String, required: false })
   @IsString()
   @IsOptional()
-  description: string;
+  description?: string;
 
   @ApiProperty({ type: Number, format: 'decimal', required: false, minimum: 0 })
   @IsNumber()
   @Min(0)
   @IsOptional()
-  unit_price: number;
+  unit_price?: number;
 
   @ApiProperty({ type: Number, format: 'int', required: false, minimum: 0 })
   @IsInt()
   @Min(0)
   @IsOptional()
-  quantity: number;
+  quantity?: number;
 
   @ApiProperty({ type: Number, format: 'int', required: false, minimum: 1 })
   @IsInt()
   @Min(1)
   @IsOptional()
-  invoice_id: number;
+  invoice_id?: number;
 }

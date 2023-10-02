@@ -9,15 +9,15 @@ export class UpdateThirdPartyInvoicedDto extends PartialType(
   @ApiProperty({ type: String, required: false })
   @IsString()
   @IsOptional()
-  name: string;
+  name?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsString()
   @IsOptional()
-  address: string;
+  address?: string;
 
   @ApiProperty({ type: String, required: false })
   @IsString()
   @IsOptional()
-  phone: string;
+  phone?: string;
 }

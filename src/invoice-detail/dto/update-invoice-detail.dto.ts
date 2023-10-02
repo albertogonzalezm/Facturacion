@@ -10,17 +10,17 @@ export class UpdateInvoiceDetailDto extends PartialType(
   @IsInt()
   @Min(1)
   @IsOptional()
-  invoice_id: number;
+  invoice_id?: number;
 
   @ApiProperty({ type: Number, format: 'int', required: false, minimum: 1 })
   @IsInt()
   @Min(1)
   @IsOptional()
-  concept_id: number;
+  concept_id?: number;
 
   @ApiProperty({ type: Number, format: 'int', required: false, minimum: 0 })
   @IsInt()
   @Min(0)
   @IsOptional()
-  quantity: number;
+  quantity?: number;
 }

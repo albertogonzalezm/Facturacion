@@ -1,5 +1,5 @@
-import { InvoiceDetail } from 'src/invoice-detail/entities/invoice-detail.entity';
-import { Invoice } from 'src/invoice/entities/invoice.entity';
+import { InvoiceDetail } from '../../invoice-detail/entities/invoice-detail.entity';
+import { Invoice } from '../../invoice/entities/invoice.entity';
 import {
   Entity,
   Column,
@@ -36,5 +36,5 @@ export class Concept {
     onDelete: 'CASCADE',
     cascade: true,
   })
-  invoiceDetails: InvoiceDetail[];
+  invoice_details: InvoiceDetail[];
 }

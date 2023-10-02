@@ -20,7 +20,7 @@ export class ConceptService {
 
     if (!invoiceFound)
       throw new NotFoundException(
-        `No se encontró el Concepto con id ${data.invoice_id}`,
+        `No se encontró la Factura con id ${data.invoice_id}`,
       );
 
     return await this.conceptRepository.save(data);
