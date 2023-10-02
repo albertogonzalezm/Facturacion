@@ -8,6 +8,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1', {
     exclude: [{ path: '/', method: RequestMethod.ALL }],
   });
+  app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
     .setTitle(
       'Desarrollador Junior en NestJS - Prueba de Habilidades (Facturación)',
@@ -25,7 +26,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/doc', app, document);
-  app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
 bootstrap();

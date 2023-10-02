@@ -23,7 +23,7 @@ import {
 } from '@nestjs/swagger';
 
 @ApiTags('Concepto')
-@Controller('concept')
+@Controller('concepts')
 export class ConceptController {
   constructor(private readonly conceptService: ConceptService) {}
 

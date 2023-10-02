@@ -11,7 +11,7 @@
 ## Descripción
 
 Desarrollador Junior en NestJS - Prueba de Habilidades (Facturación)
-> Desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta, actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura.
+Desarrollar una API con NestJS que gestionará un sistema de facturación. El objetivo principal es crear una plataforma que permita la creación, consulta, actualización y eliminación de terceros facturados, facturas, conceptos y detalles de factura.
 
 ## Clonacion del repositorio
 
@@ -45,7 +45,7 @@ $ npm run start
 $ npm run start:dev
 
 # production mode
-$ npm run start:prod
+$ npm run build & npm run start:prod
 ```
 Para ver los endpoints de la API, simplemente abra su navegador web y vaya a la siguiente dirección: http://localhost:3000/api/doc. Asegúrese de que la aplicación esté en ejecución antes de intentar acceder a la documentación.
 
@@ -54,9 +54,6 @@ Para ver los endpoints de la API, simplemente abra su navegador web y vaya a la 
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
